@@ -1,6 +1,6 @@
 package com.thmlogwork.timezone.app.persistence
 
-import com.vividsolutions.jts.geom.Point
+import org.locationtech.jts.geom.Point
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.query.Param

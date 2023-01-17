@@ -2,16 +2,12 @@ package com.thmlogwork.timezone.app.persistence
 
 import com.thmlogwork.timezone.app.domain.LatLng
 import com.thmlogwork.timezone.app.domain.TimezoneInfo
-import com.vividsolutions.jts.geom.Coordinate
-import com.vividsolutions.jts.geom.GeometryFactory
-import org.springframework.beans.factory.annotation.Autowired
+import org.locationtech.jts.geom.Coordinate
+import org.locationtech.jts.geom.GeometryFactory
 import org.springframework.stereotype.Service
 
 @Service
-class TimezoneRepositoryImpl : TimezoneRepository {
-
-    @Autowired
-    private lateinit var jpaRepository: TimezonesJpaRepository
+class TimezoneRepositoryImpl(val jpaRepository: TimezonesJpaRepository) : TimezoneRepository {
 
     override fun getTimezone(latLng: LatLng): TimezoneInfo {
 
